@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Week 4</title>
+
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <!-- Duke SimpleImage JS -->
+    <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+
+    <!-- Jumbotron -->
+    <div id="inner-fixed">
+    <div class="jumbotron photofilter-jumbotron text-center">
+      <h4 class="display-4"><i class="far fa-images" style="color: #FF6663 !important;"></i>&nbsp;PhotoFilter</h4>
+      <hr class="my-2">
+      <nav id="navigation" class="navbar navbar-light photofilter-navigation">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" id="active">Filter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="steganography.html">Steganography</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    </div>
+
+    <div id="inner-remaining">
+      <div id="loading"></div>
+        <div id="page">
+
+        <!-- Canvas -->
+          <div class="container photofilter-photo-container">
+            <div class="row">
+              <div class="col-12">
+                <div class="card mb-3 photofilter-canvas">
+                  <canvas id="canvas">Your browser does not support the HTML5 canvas tag.</canvas>
+                  <div class="btn-group photofilter-tools" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary" onclick="rotateLeft()" data-toggle="modal" data-target="" id="rotate-left">
+                      <i class="fas fa-redo" style="-moz-transform: scale(-1, 1); -o-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);" data-toggle="tooltip" data-placement="top" title="rotate-left"></i></button>
+                    <button type="button" class="btn btn-secondary" onclick="rotateRight()" data-toggle="modal" data-target="" id="rotate-right"><i class="fas fa-redo" data-toggle="tooltip" data-placement="top" title="rotate-right"></i></button>
+                    <button type="button" class="btn btn-secondary" id="restore-image" data-toggle="modal" data-target=""><i class="far fa-window-restore" id="restore" data-toggle="tooltip" data-placement="top" title="restore"></i></button>
+                    <button type="button" class="btn btn-secondary" onclick="download('canvas','PhotoFilter')"><a data-toggle="tooltip" data-placement="top" title="download" id="download" download="image.png"><i class="far fa-save" id="download-icon"></i></a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!-- Input -->
+        <div class="container photofilter-photo-input">
+          <div class="row">
+            <div class="col-12">
+              <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" multiple="false" id="input" onchange="loadImage('input','canvas', 'canvas-desc', 0);">
+                  <label class="custom-file-label" id="canvas-desc" onchange="check();">Browse Image</label>
+                </div>
+                <div class="input-group-append">
+                  <button class="btn btn-secondary" type="button" id="remove-image"  data-toggle="modal" data-target="">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter -->
+        <div class="container photofilter-photo-filter" id="filter-nav">
+          <div class="row">
+            <div class="col-12">
+              <div class="photofilter-photo-filter-group">
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('GrayScale');">GrayScale</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Sepia');">Sepia</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('XPro2');">X-Pro2</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Willow');">Willow</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Walden');">Walden</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Valencia');">Valencia</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Toaster');">Toaster</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Sierra');">Sierra</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Rise')">Rise</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Nashville')">Nashville</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Mayfair')">Mayfair</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('LoFi')">Lo-Fi</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Kelvin')">Kelvin</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Inkwell')">Inkwell</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Hudson')">Hudson</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Hefe')">Hefe</button>
+                <button type="button" class="btn  btn-outline-secondary btn-filter" onclick="getFilter('Earlybird')">Earlybird</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Brannan')">Brannan</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('Amaro')">Amaro</button>
+                <button type="button" class="btn btn-outline-secondary btn-filter" onclick="getFilter('F1997')">1977</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <!-- Confirm Remove -->
+        <div class="modal fade" id="confirm-remove" tabindex="-1" role="dialog" aria-labelledby="confirm-remove-modal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirm Remove</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Are you sure to remove the existing image from the canvas?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="removeImage('input','canvas','canvas-desc', 0);">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm Restore -->
+        <div class="modal fade" id="confirm-restore" tabindex="-1" role="dialog" aria-labelledby="confirm-remove-modal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirm Restore</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Are you sure to restore canvas to the original image?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="restore();">Restore</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm Rotate Left-->
+        <div class="modal fade" id="confirm-rotate-left" tabindex="-1" role="dialog" aria-labelledby="confirm-remove-modal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirm Rotate</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                This operation may remove the applied filter, continue?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="rotateLeft();">Rotate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm Rotate Right-->
+        <div class="modal fade" id="confirm-rotate-right" tabindex="-1" role="dialog" aria-labelledby="confirm-remove-modal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirm Rotate</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                This operation may remove the applied filter, continue?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="rotateRight();">Rotate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="height: 190px;"></div>
+    </div>
+
+
+  </body>
+</html>
