@@ -307,7 +307,7 @@ function changeMode(canvasID, leftID, rightID, centerID){
   try{
     mode = document.getElementById("mode").checked;
   }
-  catch{
+  catch(err){
     return;
   }
   function collapseExpand(){
