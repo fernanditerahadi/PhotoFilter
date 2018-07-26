@@ -16,6 +16,7 @@ Url : [https://vinsensiusfernandi.github.io/PhotoFilter/](https://vinsensiusfern
 ![Steganography](http://res.cloudinary.com/jlaja/image/upload/v1532584918/Steg_Hide.gif)
 #### Extract a secret message from an steganographic image
 ![Steganograhpy](http://res.cloudinary.com/jlaja/image/upload/v1532585543/Steg_Extract.gif)
+> With this feature in mind, it is safe to distribute a message across the office without your boss knowing that you are planning a party in the kitchen
 ### Filter
 ![Image Filter Instagram Photo Effects](http://res.cloudinary.com/jlaja/image/upload/v1532581861/Filter.gif)
 
