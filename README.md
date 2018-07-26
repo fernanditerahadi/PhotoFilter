@@ -12,5 +12,5 @@ Url : [https://vinsensiusfernandi.github.io/PhotoFilter/](https://vinsensiusfern
   * Extract a secret message from steganographic image
 ## Demonstration
 ### PhotoFilter
-![Filter_Demo](http://res.cloudinary.com/jlaja/image/upload/c_scale,w_480/v1532581861/Filter.gif)
+![Filter_Demo](http://res.cloudinary.com/jlaja/image/upload/v1532581861/Filter.gif)
 
