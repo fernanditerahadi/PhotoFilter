@@ -11,12 +11,15 @@ Url : [https://vinsensiusfernandi.github.io/PhotoFilter/](https://vinsensiusfern
   * Hide a secret message and embed it into your image
   * Extract a secret message from steganographic image
 ## Demonstration
-### Filter
-![Filter_Demo](http://res.cloudinary.com/jlaja/image/upload/v1532581861/Filter.gif)
-
 ### Steganography
 #### Embed a secret message into an image
-![Steganography_Demo](http://res.cloudinary.com/jlaja/image/upload/v1532584918/Steg_Hide.gif)
+![Steganography](http://res.cloudinary.com/jlaja/image/upload/v1532584918/Steg_Hide.gif)
 #### Extract a secret message from an steganographic image
+![Steganograhpy](http://res.cloudinary.com/jlaja/image/upload/v1532585543/Steg_Extract.gif)
+### Filter
+![Image Filter Instagram Photo Effects](http://res.cloudinary.com/jlaja/image/upload/v1532581861/Filter.gif)
+
+
+
 
 
