@@ -16,5 +16,5 @@ Url : [https://vinsensiusfernandi.github.io/PhotoFilter/](https://vinsensiusfern
 
 ### Steganography
 #### Embed a message into an image
-![Steganography_Demo](https://cloudinary.com/console/media_library/asset/image/upload/Steganography_Hide)
+![Steganography_Demo](http://res.cloudinary.com/jlaja/image/upload/v1532584217/Steganography_Hide.gif)
 
