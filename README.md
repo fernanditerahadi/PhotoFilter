@@ -19,6 +19,8 @@ Url : [https://vinsensiusfernandi.github.io/PhotoFilter/](https://vinsensiusfern
 ### Filter
 ![Image Filter Instagram Photo Effects](http://res.cloudinary.com/jlaja/image/upload/v1532581861/Filter.gif)
 
+> Just in case you are wondering how do I have that beautiful loading animation on my web page, I took it from https://imgur.com/user/FlyHater. What a very tallented illustrator, all loading animation credit goes to him
+
 
 
 
