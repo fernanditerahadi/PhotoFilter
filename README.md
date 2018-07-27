@@ -2,7 +2,7 @@
 This is a web app that allows users to put famous Instagram photo effects on their image 
 as well as sending secret message to their fellows in a image
 
-Url : [https://fernanditerahadi.github.io/PhotoFilter/](https://fernanditerahadi.github.io/PhotoFilter/)
+URL : [https://fernanditerahadi.github.io/PhotoFilter/](https://fernanditerahadi.github.io/PhotoFilter/)
 
 ## Features
 * Filter
